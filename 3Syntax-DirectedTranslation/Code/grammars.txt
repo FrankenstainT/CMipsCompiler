@@ -1,0 +1,46 @@
+S T S | O S | C S | W S | id 11 CC S | ST S | ; S | \e
+11 \e
+T 15 int decs ; | 15 _Bool decs ;  
+decs 16 dec dec'
+dec' 15 , decs | \e   
+dec id 1 assign
+assign \e | = expr 12
+O ( id ) = expr ;
+1 \e
+expr G 5 expr' 6  
+expr' && G 8 expr' 9 | \|\| G 8 expr' 9 | \e 10
+G L 5 G' 6
+G' \| L 8 G' 9 | \e 10
+L M 5 L' 6
+L' & M 8 L' 9 | \e 10
+M H 5 M' 6
+M' == H 8 M' 9 | != H 8 M' 9 | \e 10   
+H I 5 H' 6
+H' > I 8 H' 9 | < I 8 H' 9 | >= I 8 H' 9 | <= I 8 H' 9 | \e 10
+I J 5 I' 6
+I' + J 8 I' 9 | - J 8 I' 9 | \e 10
+J K 5 J' 6
+J' * K 8 J' 9 | / K 8 J' 9 | \e 10
+5 \e
+6 \e
+7 \e
+8 \e
+9 \e
+10 \e
+K ! K 4 | ( expr ) 4 | id 3 | decimal 7 | hex 4
+3 \e
+C if ( expr ) { S } ; EL 
+EL \e | else { S } ; 
+W while ( expr )  { S } ;
+CC ( expr_list ) | = expr 13 ;
+12 \e  
+13 \e
+4 \e
+expr_list expr E
+E , expr E | \e 
+ST struct id 2 { ST' } ;
+2 \e
+ST' 14 T ST' | ST ST' | 14 ; ST' | \e
+14 \e
+15 \e
+16 \e
